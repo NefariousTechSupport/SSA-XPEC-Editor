@@ -6,7 +6,7 @@
 * Double click text items in the list box to view/edit.
 * Go to File > Save when you wish to save.
 
-## Building
+## Building Requirements
 * Mac: No
 * Linux: No
 * Windows: Visual Studio
