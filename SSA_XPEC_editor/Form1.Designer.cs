@@ -35,6 +35,8 @@ namespace SSA_XPEC_editor
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.attributesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.lbText = new System.Windows.Forms.ListBox();
 			this.tt_lbText = new System.Windows.Forms.ToolTip(this.components);
 			this.menuStrip1.SuspendLayout();
@@ -43,7 +45,8 @@ namespace SSA_XPEC_editor
 			// menuStrip1
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -63,7 +66,7 @@ namespace SSA_XPEC_editor
 			// 
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
 			this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-			this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
 			this.openToolStripMenuItem.Text = "Open";
 			this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenFile);
 			// 
@@ -72,9 +75,25 @@ namespace SSA_XPEC_editor
 			this.saveToolStripMenuItem.Enabled = false;
 			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
 			this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-			this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
 			this.saveToolStripMenuItem.Text = "Save";
 			this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveFile);
+			// 
+			// viewToolStripMenuItem
+			// 
+			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.attributesToolStripMenuItem});
+			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+			this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+			this.viewToolStripMenuItem.Text = "View";
+			// 
+			// attributesToolStripMenuItem
+			// 
+			this.attributesToolStripMenuItem.Enabled = false;
+			this.attributesToolStripMenuItem.Name = "attributesToolStripMenuItem";
+			this.attributesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.attributesToolStripMenuItem.Text = "Attributes";
+			this.attributesToolStripMenuItem.Click += new System.EventHandler(this.ViewAttributes);
 			// 
 			// lbText
 			// 
@@ -111,6 +130,8 @@ namespace SSA_XPEC_editor
 		private System.Windows.Forms.ListBox lbText;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.ToolTip tt_lbText;
+		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem attributesToolStripMenuItem;
 	}
 }
 

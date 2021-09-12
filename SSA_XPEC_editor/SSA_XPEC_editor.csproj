@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewAttributesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAttributesForm.Designer.cs">
+      <DependentUpon>ViewAttributesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LXBFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +79,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewAttributesForm.resx">
+      <DependentUpon>ViewAttributesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewItemForm.resx">
       <DependentUpon>ViewItemForm.cs</DependentUpon>
     </EmbeddedResource>
