@@ -16,6 +16,12 @@ namespace SSA_XPEC_editor
 		//The main lxb file
 		LXBFile lxb;
 
+		//The main apk file
+		APKFile apk;
+
+		//The main save data file
+		DATFile dat;
+
 		public Form1()
 		{
 			InitializeComponent();		//Set up the Form, managed by Visual Studio
@@ -30,24 +36,39 @@ namespace SSA_XPEC_editor
 
 				if (openFileDialog.ShowDialog() == DialogResult.OK)			//If the user selects a file
 				{
-					lxb = new LXBFile(openFileDialog.FileName);														//Load the selected file as an lxb file
 					this.Text = $"SSA XPEC Text Editor - v0.01 - \"{Path.GetFileName(openFileDialog.FileName)}\"";	//Change the window title
-
-					lbText.Items.Clear();												//Remove all previously loaded items
-					if(lxb.attributes.Any(x => x == "TextTable"))						//If this is a text file
+					switch (Path.GetExtension(openFileDialog.FileName))
 					{
-						for(uint i = 0; i < lxb.numberOfItems; i++)						//For every text item
-						{
-							lbText.Items.Add(lxb.ReadString(lxb.itemAddresses[i]));		//Read the text item and add it to the listbox
-						}
+						case ".lxb":
+							lxb = new LXBFile(openFileDialog.FileName);														//Load the selected file as an lxb file
 
-						saveToolStripMenuItem.Enabled = true;				//Enable saving if this is a text file
+							lbText.Items.Clear();												//Remove all previously loaded items
+							if(lxb.attributes.Any(x => x == "TextTable"))						//If this is a text file
+							{
+								for(uint i = 0; i < lxb.numberOfItems; i++)						//For every text item
+								{
+									lbText.Items.Add(lxb.ReadString(lxb.itemAddresses[i]));		//Read the text item and add it to the listbox
+								}
+
+								saveToolStripMenuItem.Enabled = true;				//Enable saving if this is a text file
+							}
+							else
+							{
+								saveToolStripMenuItem.Enabled = false;				//Disable saving if this is not a text file, done to prevent corrupting non-text files
+							}
+							attributesToolStripMenuItem.Enabled = true;				//Enable viewing attributes
+							break;
+						case ".dat":
+							
+							break;
+						/*case ".apk":
+							lxb = null;
+							
+							apk = new APKFile(openFileDialog.FileName);
+							break;*/
+						default:
+							break;
 					}
-					else
-					{
-						saveToolStripMenuItem.Enabled = false;				//Disable saving if this is not a text file, done to prevent corrupting non-text files
-					}
-					attributesToolStripMenuItem.Enabled = true;				//Enable viewing attributes
 				}
 			}
 		}

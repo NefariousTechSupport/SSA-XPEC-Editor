@@ -46,12 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APKFile.cs" />
+    <Compile Include="DATFile.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="SSAFile.cs" />
     <Compile Include="ViewAttributesForm.cs">
       <SubType>Form</SubType>
     </Compile>
