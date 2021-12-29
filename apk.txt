@@ -1,0 +1,46 @@
+image data starts at 0xA80 (WRONG)
+
+number of images stored in 0x2C
+
+width and height stored at 0x34, height first (16 bit), then width (16 bit)	(wrong)
+
+padding of 4 zeroes
+
+chunks, one for each image:
+0x00: location of name relative to current position
+0x04: 
+0x08:
+0x0C: 
+
+0x0C: Format, 0x00004000 is DXT1, 0x00008000 is DXT5 (incorrect)
+0x0C: Image size i think (width*height) (Incorrect)
+
+there is text data after the first set of chunks which give the names of each image
+
+second set of chunks (0x24 bytes after LMRV header)
+
+0x00: zeroes
+0x04: zeroes
+0x08: 
+0x0C: 
+0x10: 
+0x10: 
+0x14: Format: 0x88010200 is DXT5, 0x86010200 is DXT1
+0x18: 
+0x1C: height, width (both shorts)
+0x20: zeroes
+0x20: zeroes
+0x24: zeroes
+0x28: zeroes
+0x2C: zeroes
+0x30: zeroes
+0x30: zeroes
+0x34: zeroes
+0x38: zeroes
+0x3C: zeroes
+0x40: zeroes
+0x40: zeroes
+0x44: zeroes
+0x48: zeroes
+0x4C: zeroes
+0x50: zeroes
